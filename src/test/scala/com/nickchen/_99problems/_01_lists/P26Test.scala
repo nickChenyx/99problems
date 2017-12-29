@@ -14,6 +14,12 @@ class P26Test extends FunSpec with Matchers {
 
       P26.combinations(3, List('a, 'b, 'c, 'd, 'e, 'f)).length should be (20)
     }
+
+    it("another") {
+      P26.combinationsAnother(3, List('a,'b,'c,'d)).length should be (4)
+
+      P26.combinationsAnother(3, List('a, 'b, 'c, 'd, 'e, 'f)).length should be (20)
+    }
   }
 
 }

@@ -24,4 +24,18 @@ object P26 {
     }
   }
 
+  /**
+    * built-in
+    */
+
+  def combinationsBuiltin[T](n: Int, list: List[T]): List[List[T]] = list.combinations(n).toList
+
+  /**
+    * another solution
+    */
+  def combinationsAnother[T](n: Int, list: List[T]): List[List[T]] = list match {
+    case _ if n == 1 => list.map(List(_)) // choose the last element
+    case x::xs => combinationsAnother(n-1, xs).map( x::_ ) ::: combinationsAnother(n, xs) // next element ::: head element
+    case Nil => Nil
+  }
 }
